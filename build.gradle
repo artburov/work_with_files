@@ -1,0 +1,29 @@
+plugins {
+    id "java"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(
+            "com.codeborne:selenide:5.20.1",
+            "org.junit.jupiter:junit-jupiter-api:5.7.1",
+            "org.hamcrest:hamcrest:2.2",
+            "org.apache.poi:poi:5.0.0",
+            "org.apache.poi:poi-ooxml:5.0.0",
+            "org.apache.poi:poi-scratchpad:5.0.0",
+            "com.codeborne:pdf-test:1.6.1",
+            "net.lingala.zip4j:zip4j:2.7.0",
+            "com.codeborne:xls-test:1.2")
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.7.1"
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+test {
+    useJUnitPlatform()
+}
